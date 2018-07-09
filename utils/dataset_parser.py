@@ -17,7 +17,7 @@ def parse_dataset(dataset_name='spambase'):
     dataset_path = DATASETS[dataset_name]
 
     df = pd.read_csv(os.path.join(DATASET_DIRECTORY, dataset_path),
-                     header=None, names=range(7))
+                     header=None, names=range(58))
 
     X = df.iloc[:, :-1].values
 

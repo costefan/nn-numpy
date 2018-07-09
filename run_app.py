@@ -3,6 +3,6 @@ from nn.runner import Runner
 
 
 if __name__ == '__main__':
-    X, y = parse_dataset(dataset_name='dummy')
+    X, y = parse_dataset(dataset_name='spambase')
 
     Runner.run(X, y)

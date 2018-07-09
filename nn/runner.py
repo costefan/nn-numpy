@@ -9,17 +9,18 @@ class Runner:
 
     @classmethod
     def run(cls, X, y):
-        n_epochs = 100
+        n_epochs = 1
         learning_rate = 0.01
         batch_size = 1
 
         n_classes = y.shape[1]
 
+        n_input = X.shape[1]
         n_hidden_1 = 100
         n_hidden_2 = 200
         n_output = n_classes
 
-        model = AlaResNet(X.shape[0], n_hidden_1, n_hidden_2,
+        model = AlaResNet(n_input, n_hidden_1, n_hidden_2,
                           n_output, learning_rate)
 
         for epoch in range(n_epochs):
