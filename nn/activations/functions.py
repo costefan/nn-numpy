@@ -27,10 +27,6 @@ def relu_deriv(x):
 
 
 def softmax(X):
-    logger.info('Dim before softmax: {}'.format(X.shape))
-    e_x = np.exp(X)
+    total_exp = np.sum(np.exp(X), axis=0)
 
-    res_softmax = e_x / e_x.sum(axis=0)
-    logger.info('Dim after softmax: {}'.format(res_softmax.shape))
-
-    return res_softmax
+    return np.exp(X) / total_exp
