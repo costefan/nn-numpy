@@ -45,13 +45,6 @@ class AlaResNet:
         b2 = np.random.uniform(-scale2, scale2, (n_hidden_2, 1))
         b3 = np.random.uniform(-scale3, scale3, (n_output, 1))
 
-        # W_1 = norm(loc=0, scale=1/((n_input + n_hidden_1) / 2),
-        #            size=(n_hidden_1, n_input))
-        # W_2 = norm(loc=0, scale=1/((n_hidden_1 + n_hidden_2) / 2),
-        #            size=(n_hidden_2, n_hidden_1, ))
-        # W_3 = norm(loc=0, scale=1/((n_hidden_2 + n_output) / 2),
-        #            size=(n_output, n_hidden_2, ))
-
         return W_1, W_2, W_3
 
     @property

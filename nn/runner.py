@@ -9,7 +9,7 @@ class Runner:
 
     @classmethod
     def run(cls, X, y):
-        n_epochs = 20
+        n_epochs = 100
         learning_rate = 0.01
         batch_size = 1
 
@@ -49,10 +49,6 @@ class Runner:
                                      model.a_1.reshape((n_hidden_1, 1)).T)
                 delta_W_one = np.dot(d_l1, X_batch)
 
-                logger.info(delta_W_out)
-                logger.info(delta_W_two)
-                logger.info(delta_W_one)
-
                 # Update weights
                 model.W_3 = model.W_3 - learning_rate * delta_W_out
                 model.W_2 = model.W_2 - learning_rate * delta_W_two
@@ -61,5 +57,5 @@ class Runner:
                 if y_batch.flatten().argmax(axis=0) == y_pred.argmax(axis=0):
                     predicted += 1
 
-            accuracy = predicted / (X.shape[0] / batch_size)
+            accuracy = predicted / (size_X / batch_size)
             logger.info('Accuracy on epoch {}: {}'.format(epoch, accuracy))
