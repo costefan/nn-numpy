@@ -10,4 +10,4 @@ class Linear:
     def __call__(self, X, W, *args, **kwargs):
         X = X.flatten()
 
-        return np.dot(W.T, X)
+        return np.dot(W, X)

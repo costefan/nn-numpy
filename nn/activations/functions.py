@@ -1,8 +1,6 @@
 import numpy as np
 from config.logger import logger
 
-# TODO: DECORATOR
-
 
 def tanh(X):
     logger.info('Dim before tanh: {}'.format(X.shape))
@@ -12,8 +10,8 @@ def tanh(X):
     return res_tanh
 
 
-def tanh_deriv(X):
-    return 1 - (X ** 2)
+def tanh_deriv(x):
+    return 1 - np.tanh(x) ** 2
 
 
 def relu(X):
@@ -24,13 +22,8 @@ def relu(X):
     return res_relu
 
 
-def relu_deriv(X):
-    for i in range(0, len(X)):
-        if X[i] > 0:
-            X[i] = 1
-        else:
-            X[i] = 0
-    return X
+def relu_deriv(x):
+    return np.array(x > 0, dtype=np.int8)
 
 
 def softmax(X):
